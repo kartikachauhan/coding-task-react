@@ -1,5 +1,6 @@
 /* Instruments */
 import type { ReduxThunkAction } from "@/lib/redux";
+import { incrementByAmount } from "./counterSlice";
 
 export const incrementIfOddAsync =
   (amount: number): ReduxThunkAction =>
