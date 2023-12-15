@@ -11,6 +11,15 @@ export const counterSlice = createSlice({
   initialState,
   reducers: {
     // increment, decreament, incrementByAmount loginc here
+    increment: (state) => {
+      state.value += 1;
+    },
+    decrement: (state) => {
+      state.value -= 1;
+    },
+    incrementByAmount: (state, action: PayloadAction<number>) => {
+      state.value += action.payload;
+    },
   },
 });
 
@@ -19,3 +28,5 @@ export interface CounterSliceState {
   value: number;
   status: "idle" | "loading" | "failed";
 }
+
+export const { increment, decrement, incrementByAmount } = counterSlice.actions;
